@@ -1,25 +1,29 @@
 import React, { useState } from "react"
+import "./board.scss"
 import Titles from "./components/List/List"
+import { title } from "process"
+import { useParams } from "react-router-dom"
+
 export const Board = () =>
-    <div>
-        <Titles/>
-        <BoardTitle/> 
-    </div>
+    <>
+        <BoardTitle />
+        <div className="board">
 
+            <BoardLists />
 
-
-
+        </div>
+    </>
 
 const BoardTitle = () => {
-    const [titles, setTitles] = useState("Моя тестова дошка")
+    let { board_id } = useParams();
+    const [titles, setTitles] = useState({title:"Моя тестова дошка"})
     return (
-        <div>{titles}</div>
+        <>
+        <div className="boardTitle">{titles.title}</div>
+        <div>{board_id}</div>
+        </>
     )
 }
-
-
-
-
 
 const BoardLists = () => {
     const [lists, setLists] = useState([
@@ -28,7 +32,7 @@ const BoardLists = () => {
             title: "Плани",
             cards: [
                 { id: 1, title: "помити кота" },
-                { id: 2, title: "приготувати суп" },
+                { id: 2, title: "прготувати суп" },
                 { id: 3, title: "сходити в магазин" }
             ]
         },
@@ -48,8 +52,12 @@ const BoardLists = () => {
             ]
         }
     ])
-}
-
-function boards() {
-
+    const a = lists.map(b =>
+        <Titles title={b.title} cards={b.cards} />
+    )
+    return (
+        <>
+            {a}
+        </>
+    )
 }

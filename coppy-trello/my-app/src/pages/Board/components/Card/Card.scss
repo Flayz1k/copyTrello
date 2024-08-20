@@ -1,0 +1,17 @@
+$font: "Montserrat", sans-serif;
+$shadow: 5px 5px 5px rgb(69, 68, 68);
+.Card {
+    font-family: $font;
+    position: relative;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(16, 16, 16, 0.426);
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    font-weight: 500;
+    box-shadow: $shadow
+
+}

@@ -1,0 +1,46 @@
+$font: "Montserrat", sans-serif;
+$shadow: 5px 5px 5px  rgb(69, 68, 68);
+// $color
+.List {
+    position: relative;
+    background-color: rgb(157, 157, 157);
+    left: 120px;
+    width: 250px;
+    height: 500px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(128, 128, 128);
+    box-shadow: $shadow;
+
+}
+
+.List h1{
+    
+    position: relative;
+    left: 12px;
+    word-wrap: break-word;
+    white-space: nowrap;
+    font-size: 20px;
+    width: 80px;
+    text-align: center;
+    color: whitesmoke;
+    font-family:$font
+    
+}
+.AddCards{
+    font-family: $font;
+    position: relative;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(16, 16, 16, 0.426);
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    height: 28px;
+    color: rgb(0, 0, 0);
+    font-weight:500;
+    box-shadow: $shadow;
+}
