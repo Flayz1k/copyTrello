@@ -1,18 +1,15 @@
 import React from "react";
 import "./Board.scss"
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Board } from "../../../Board/board";
 
 interface c {
     title: string
-    background: object
     id:number
 }
-function BoardComponents({ title, background,id }: c) {
+function BoardComponents({ title,id }: c) {
     return (
      
-            <Link className="Boards" style={background} to={`/board/${id}`}>
+            <Link className="Boards" to={`/board/${id}`}>
                 <h1>{title}</h1>
             </Link>
     )

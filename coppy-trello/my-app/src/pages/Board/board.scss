@@ -1,12 +1,59 @@
-.board{
+.board {
     display: flex;
     flex-wrap: nowrap;
     // background-color: DodgerBlue;
 }
-.boardTitle{
+
+.boardTitle {
 
     text-align: center;
     height: 50px;
     font-size: 25px;
     
+
+    div {
+        position: absolute;
+        left: 9%;
+        width: 30px;
+        height: 30px;
+        font-weight: 200;
+        top: 10px;
+    }
+
+    input {
+        position: absolute;
+        left: 9.45%;
+        top: 9px;
+        border: none;
+        font-size: 25px;
+        font-weight: 200;
+        font-family: none;
+        z-index: 111;
+        outline: none;
+
+    }
+}
+
+.nema {
+    display: none;
+}
+
+.est {
+    background-color: red;
+}
+.createList {
+    position: relative;
+    background-color: rgb(157, 157, 157);
+    left: 120px;
+    width: 250px;
+    height: 25px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(128, 128, 128);
+
+}
+.createList:hover{
+    background-color: rgb(134, 134, 134);
 }

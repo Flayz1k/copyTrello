@@ -1,0 +1,50 @@
+.modalWindow {
+    background-color: white;
+    width: 250px;
+    height: 300px;
+    border-radius: 12px;
+    border-color: black;
+    border: solid;
+}
+
+.modalWindow button:first-child {
+    position: relative;
+    left: 83px;
+    top: 3px;
+    border-radius: 12px;
+    background-color: rgb(90, 90, 90);
+    border: none;
+    box-shadow: 3px 3px 3px rgb(69, 68, 68)
+}
+
+.modalWindow button:first-child:hover {
+    box-shadow: none;
+    background-color: rgb(112, 112, 112);
+    top: 5px;
+    left: 84px;
+}
+
+.modalWindow input {
+    position: relative;
+    top: 20px;
+    width: 90px;
+    left: 10px;
+}
+
+.modalWindow label {
+    position: relative;
+    top: 20px;
+    left: 8px;
+}
+
+.modalWindow button:nth-child(3) {
+    background-color: rgb(90, 90, 90);
+    position: relative;
+    top: 30px;
+    left: 33%;
+
+}
+
+.modalWindow button:nth-child(3):hover {
+    background-color: rgb(112, 112, 112);
+}

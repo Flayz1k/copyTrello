@@ -12,14 +12,14 @@ $shadow: 5px 5px 5px  rgb(69, 68, 68);
     border-radius: 10px;
     border-style: solid;
     border-color: rgb(128, 128, 128);
-    box-shadow: $shadow;
+    // box-shadow: $shadow;
 
 }
 
 .List h1{
     
     position: relative;
-    left: 12px;
+    left: 12px; 
     word-wrap: break-word;
     white-space: nowrap;
     font-size: 20px;
@@ -43,4 +43,21 @@ $shadow: 5px 5px 5px  rgb(69, 68, 68);
     color: rgb(0, 0, 0);
     font-weight:500;
     box-shadow: $shadow;
+}
+$font: "Montserrat", sans-serif;
+$shadow: 5px 5px 5px rgb(69, 68, 68);
+.Card {
+    font-family: $font;
+    position: relative;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(16, 16, 16, 0.426);
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    height: 30px;
+    font-weight: 500;
+    box-shadow: $shadow
+
 }
