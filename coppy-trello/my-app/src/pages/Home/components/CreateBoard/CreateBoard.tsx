@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./CreateBoard.scss"
 import { be, a, b,create } from "../interfaces";
 import api from "../../../../api/request";
+import { ToastContainer,toast } from "react-toastify";
 
 
 function CreateBoard({ open , close,danni}: create) {
@@ -14,6 +15,7 @@ function CreateBoard({ open , close,danni}: create) {
         if (inp1.length == 0 || inp1.includes("~") || inp1.includes("!") || inp1.includes("@") || inp1.includes("#") || inp1.includes("$") || inp1.includes("%") || inp1.includes("^") || inp1.includes("&")) {
         } else {
             const creating = async () => {
+                try{
                 const data = await api.post('board', {
                     title: inp1,
                     custom: {
@@ -21,10 +23,19 @@ function CreateBoard({ open , close,danni}: create) {
                     }
                 });
                  geting()
+            }catch(e:any){
+                toast.error(`Error ${e.message}`)
+            }
             }
             const geting = async () => {
+                try{
                 const data: b = await api.get("board")
                 danni(data.boards)
+                }catch(e:any){
+                    toast.error(`Error ${e.message}`)
+
+                }
+
             }
             creating()
         }
@@ -38,7 +49,9 @@ function CreateBoard({ open , close,danni}: create) {
                     <input id="inp" onChange={inp} />
                 </form>
                 <button onClick={Create}>Створити</button>
+                <ToastContainer/>
             </div>
+            
         )
     } else {
         return <></>;

@@ -1,63 +1,43 @@
 $font: "Montserrat", sans-serif;
-$shadow: 5px 5px 5px  rgb(69, 68, 68);
+$shadow: 5px 5px 5px rgb(69, 68, 68);
+$back:rgb(157, 157, 157);
 // $color
 .List {
     position: relative;
-    background-color: rgb(157, 157, 157);
     left: 120px;
     width: 250px;
     height: 500px;
     margin: 10px;
-    text-align: center;
     border-radius: 10px;
     border-style: solid;
-    border-color: rgb(128, 128, 128);
-    // box-shadow: $shadow;
+    flex-shrink: 0;
+    input{
+        outline: none;
+        position: relative;
+        height: 10px;
+        left: 8.4px;
+        top: 7.1px;
+        font-size: 13px;
+        line-height: 10px;
+        text-align: center;
+        width: 90%;
+        font-family: $font;
+        font-weight: 700;
+     
+    };
+    h1{
+        position: relative;
+        height: 1px;
+        text-align: center;
+        width: 99%;
+        font-family: $font;
+        font-size: 13px;
+        font-weight: 700;
+        // margin: 1px;
+    }
 
 }
 
-.List h1{
-    
-    position: relative;
-    left: 12px; 
-    word-wrap: break-word;
-    white-space: nowrap;
-    font-size: 20px;
-    width: 80px;
-    text-align: center;
-    color: whitesmoke;
-    font-family:$font
-    
-}
-.AddCards{
-    font-family: $font;
-    position: relative;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: rgba(16, 16, 16, 0.426);
-    background-color: rgb(255, 255, 255);
-    margin: 10px;
-    font-size: 20px;
-    text-align: center;
-    height: 28px;
-    color: rgb(0, 0, 0);
-    font-weight:500;
-    box-shadow: $shadow;
-}
+
 $font: "Montserrat", sans-serif;
 $shadow: 5px 5px 5px rgb(69, 68, 68);
-.Card {
-    font-family: $font;
-    position: relative;
-    border-style: solid;
-    border-radius: 10px;
-    border-color: rgba(16, 16, 16, 0.426);
-    background-color: rgb(255, 255, 255);
-    margin: 10px;
-    font-size: 20px;
-    text-align: center;
-    height: 30px;
-    font-weight: 500;
-    box-shadow: $shadow
-
-}

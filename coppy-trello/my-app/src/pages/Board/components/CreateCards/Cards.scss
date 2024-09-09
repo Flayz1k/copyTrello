@@ -1,0 +1,16 @@
+
+$font: "Montserrat", sans-serif;
+.AddCards {
+    font-family: $font;
+    position: relative;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(16, 16, 16, 0.426);
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    height: 28px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    top: 13px;
+}

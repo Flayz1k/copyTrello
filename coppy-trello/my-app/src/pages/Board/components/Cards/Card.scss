@@ -11,7 +11,19 @@ $shadow: 5px 5px 5px rgb(69, 68, 68);
     font-size: 20px;
     text-align: center;
     height: 30px;
-    font-weight: 500;
-    box-shadow: $shadow
-
+    // margin-bottom: 15px;
+    font-weight: 500;   
+    &:hover{
+        border-radius: 10px;
+        border-color: rgb(64, 207, 255);
+    }
+    &:active{
+        opacity: 0.7;
+    }
 }
+.divCards{
+    position: relative;
+    top: 20px;
+}
+
+

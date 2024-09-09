@@ -4,6 +4,8 @@ import BoardComponents from "./components/Board/Board";
 import api from "../../api/request";
 import CreateBoard from "./components/CreateBoard/CreateBoard";
 import { a,b } from "./components/interfaces";
+import { ToastContainer, toast } from 'react-toastify';
+import { error } from "console";
 
 function Component() {
 
@@ -11,9 +13,12 @@ function Component() {
 
     useEffect(() => {
         const fetchData = async () => {
+            try{
             const data: b = await api.get('board', {});
             setItems(data.boards)
-
+            }catch(e:any){
+            toast.error(`Error ${e.message}`)
+            }
         }
         fetchData()
     }, []);
@@ -42,6 +47,7 @@ function Component() {
             <CreateBoard open={opens} close={() => setOpens(false)} danni={a} />
             
         </div>
+        <ToastContainer />
 
     </>
     );

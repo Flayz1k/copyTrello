@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom"
 import Titles from "./components/listName/listName"
 import {board,listsarr} from "./interfaces"
 import CreateList from "./components/createList/createList"
-import Cards from "./components/Cards/Cards"
+import Cards from "./components/CreateCards/CreateCards"
+import { ToastContainer,toast } from "react-toastify"
 export const Board = () =>
     <>
         <BoardTitle />
@@ -20,18 +21,28 @@ const BoardTitle = () => {
 
     useEffect(() => {
         const fetchData = async () => {
+            try{
             const data: board = await api.get('board/' + board_id, {});
             setItems(data)
+        }catch(e:any){
+            toast.error(`Error ${e.message}`)
+        }
         }
         fetchData()
     }, []);
      async function put() {
+        try{
         const data = await api.put("board/" + board_id, {
             title: items?.title,
             custom: {
                 description: items?.custom.description,
             }
         })
+
+    }catch(e:any){
+        toast.error(`Error ${e.message}`)
+    }
+
     }
     const [est, setEsat] = useState(false)
 
@@ -41,13 +52,18 @@ const BoardTitle = () => {
         return <div className="boardTitle" > <div onClick={()=>setEsat(true)}>{items?.title}</div></div>
     }
 }
+
 function ListName() {
     const { board_id } = useParams()
     const [list, setList] = useState<listsarr>();
     useEffect(() => {
         const fetchData = async () => {
+            try{
             const data: board = await api.get('board/' + board_id, {});
             setList(data.lists)
+            }catch(e:any){
+                toast.error(`Error ${e.message}`)
+            }
         }
         console.log(list)
         fetchData()
@@ -61,6 +77,8 @@ function ListName() {
     function s1(a:any){
         setList(a)
     }
+
+
     const a = list?.map((b,index) =>
         <Titles  bob={s}  key={index} title={b.title} index={index}/>
     )
