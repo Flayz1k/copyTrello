@@ -2,29 +2,18 @@ import React from "react";
 import "./dragdroparea.scss"
 import { useState } from "react";
 type area = {
-    // listIndex: number
     area: number
-    // cardind: number
-    // AA:any
-    cardId:any
+    drop:any
 }
-function Area({area,cardId}: area) {
+function Area({area,drop}: area) {
     const [est, setEst] = useState(false)
-
-    function onDrop (e:any){
-        e.preventDefault();
-        console.log(cardId,e.target.id)
-        
-        setEst(false)
-
-    }
+    const [dropId,setDropId] = useState<number | null>(null)
     return (
         <div id={`${area + 1}`}
             onDragEnter={() => { setEst(true) }}
             onDragLeave={() => setEst(false)}
-            // onDrop={(e) => { const val = (e.target as HTMLElement).id; console.log("в ",(e.target as HTMLElement).id); AA(val);setEst(false);}}
-            onDrop={onDrop}
             onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) =>{drop(e.currentTarget.id);setEst(false);}}
             className={est ? "area" : "none"}>
         </div>
     )

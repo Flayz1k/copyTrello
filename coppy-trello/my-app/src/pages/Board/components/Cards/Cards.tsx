@@ -6,8 +6,10 @@ import './Card.scss'
 import CreateCards from "../CreateCards/CreateCards";
 interface Card {
     index: number
+    setDraggedCard: (id: number) => void
+    setDropAreaId: (id: number) => void
 }
-function Cards({ index }: Card) {
+function Cards({ index,setDraggedCard,setDropAreaId }: Card) {
     const [list, setList] = useState<any>()
     const { board_id } = useParams()
     useEffect(() => {
@@ -23,27 +25,25 @@ function Cards({ index }: Card) {
         setList(s)
     }
 
-    const [dropElem, setDropElem] = useState<number>()
-    const [dragElem, setDragelem] = useState("")
 
-
+    const [draggedCardId, setDraggedCardId] = useState<any>(null)
 
     function dragStart(e: any) {
-        setDragelem(e.target.id);
-        // console.log("Із", elemId)
+        // setDraggedCardId(e.target.id)
+        setDraggedCard(e.target.id) 
+        // console.log("DRAG START",e.target.id)   
     }
 
-    // function dragEnd() {
-    //     console.log("із", dragElem, " в " + dropElem)
-    // }
-
+    function drop (dropId:number) {
+        setDropAreaId(dropId)
+    }
     return (
         <>
-            <div className="divCards"><Area  area={-1} cardId={dragElem}  /></div>
+            <div className="divCards"><Area  area={-1}  drop={drop} /></div>
             {index === index && list && <div className="divCards">{list[index]?.cards?.map((a: any, areaIndex: any) =>
                 <div key={areaIndex} >
-                    <p draggable onDragStart={dragStart} id={`${areaIndex}`} className="Card"  >{a.title}</p>
-                    <Area  area={areaIndex}  cardId={dragElem} />
+                    <p draggable onDragOver={(e) => e.preventDefault()}  onDragStart={dragStart}  id={`${areaIndex}`} className="Card"  >{a.title}</p>
+                    <Area  area={areaIndex} drop={drop}   />
                 </div>)}
             </div>}
             <CreateCards index={index} lists={list} bab={update} />

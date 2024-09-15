@@ -4,7 +4,7 @@ import { board, listss } from "../../interfaces"
 import api from "../../../../api/request";
 import { useParams } from "react-router-dom";
 import CreateCards from "../CreateCards/CreateCards";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import Cards from "../Cards/Cards";
 interface Titles {
     title: string
@@ -24,47 +24,90 @@ function Titles({ title, index, bob }: Titles) {
 
             const data: any = await api.get('board/' + board_id);
             setList(data.lists)
-           
+
         }
         fetchData()
     }, [board_id]);
     async function put() {
-        try{
-        await api.put("board/" + board_id + "/list/" + list?.[index].id, {
-            title: inp
-        })
-        get()
-    }catch(e:any){
-        toast.error(`Error ${e.message}`)
-    }
-    }
-    async function get() {
-        try{
-        const t: board = await api.get("board/" + board_id)
-        bob(t.lists)
-        }catch(e:any){
+        try {
+            await api.put("board/" + board_id + "/list/" + list?.[index].id, {
+                title: inp
+            })
+            get()
+        } catch (e: any) {
             toast.error(`Error ${e.message}`)
         }
     }
-    function s1 (a:any){
-        setList(a)
+    async function get() {
+        try {
+            const t: board = await api.get("board/" + board_id)
+            bob(t.lists)
+        } catch (e: any) {
+            toast.error(`Error ${e.message}`)
+        }
     }
 
-    // const card = index === index && list && <div> {list[index]?.cards?.map((a: any, ind: any) => <div key={ind}><p draggable onDragStart={() => console.log(ind)} className="Card" >{a.title}</p></div>)}</div>
+    
+    function s1(a: any) {
+        setList(a)
+    }
+    const [draggedCard,setDraggedCard] = useState<number>()
+    const [listId,setListid] = useState<number>()
+    const [dropArea,setDropArea] = useState<number>()
+
+    function onDropEnd (){
+        console.log(`із ${draggedCard} рядка  в ${listId} список  в ${dropArea} рядок `)
+    }
+
+
+    function setDraggedCardId (id:number){
+        console.log("CARD ID", id)
+        setDraggedCard(id)
+        
+    }
+    function setDropAreaId (areaId:number){
+        // console.log(areaId)
+        setDropArea(areaId)
+        onDropEnd()   
+    }
+    function onDrop (e:any)  {
+        // console.log("DROP LIST" ,e.currentTarget.id);
+        setListid(e.currentTarget.id)
+    }
     if (est) {
-        return <div className="List"><input  autoFocus onChange={(e) => setInp(e.target.value)} onBlur={() => { setEst(false); put() }} onKeyDown={(e) => { if (e.key === "Enter") { setEst(false); put() } }} defaultValue={title} />
+        return ( <div className="List"
+
+            onDragOver={(e) => {
+                e.preventDefault()
+            }}
+            onDrop={(e) => {
+                console.log('e onDrop');
+                console.log(e);
+            }}
+
+        ><input autoFocus onChange={(e) => setInp(e.target.value)} onBlur={() => { setEst(false); put() }} onKeyDown={(e) => { if (e.key === "Enter") { setEst(false); put() } }} defaultValue={title} />
             <div>
-            <Cards index={index}/>
+                <Cards index={index}  setDraggedCard={setDraggedCardId} setDropAreaId={setDropAreaId} />
             </div>
         </div>
+        )
     } else {
-        return <>
-            <div   className="List"><div><h1 onClick={() => { if (est == false) { setEst(true) } }}>{title}</h1></div>
+        return (<div>
+            <div className="List"
+            
+            onDragOver={(e) => {
+                e.preventDefault()
+            }}
+            onDrop={onDrop}
+            id={`${index}`}
+            >
+                <div><h1 onClick={() => { if (est == false) { setEst(true) } }}>{title}</h1></div>
                 <div>
-                    <Cards index={index}/>
+                    <Cards index={index}  setDraggedCard={setDraggedCardId} setDropAreaId={setDropAreaId} />
                 </div>
             </div>
-        </>
+            </div>
+        )
     }
 }
 export default Titles
