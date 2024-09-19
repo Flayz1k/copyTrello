@@ -54,28 +54,29 @@ function Titles({ title, index, bob }: Titles) {
     const [draggedCard,setDraggedCard] = useState<number>()
     const [listId,setListid] = useState<number>()
     const [dropArea,setDropArea] = useState<number>()
+    useEffect(() =>{
+               console.log(`із ${draggedCard} рядка  в ${listId} список  в ${dropArea} рядок `)
 
-    function onDropEnd (){
-        console.log(`із ${draggedCard} рядка  в ${listId} список  в ${dropArea} рядок `)
-    }
-
-
+    },[dropArea,listId,draggedCard])
     function setDraggedCardId (id:number){
-        console.log("CARD ID", id)
-        setDraggedCard(id)
-        
+        // console.log("CARD ID", id)
+        let num = +id
+        setDraggedCard(num)
     }
     function setDropAreaId (areaId:number){
         // console.log(areaId)
-        setDropArea(areaId)
-        onDropEnd()   
-    }
+        
+        let num = +areaId
+        setDropArea(num)         
+    }   
     function onDrop (e:any)  {
         // console.log("DROP LIST" ,e.currentTarget.id);
-        setListid(e.currentTarget.id)
+        let num = +e.currentTarget.id
+        setListid(num)
     }
     if (est) {
-        return ( <div className="List"
+        return ( 
+        <div className="List"
 
             onDragOver={(e) => {
                 e.preventDefault()
