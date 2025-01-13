@@ -1,0 +1,45 @@
+.addDescropton{
+    background-color: rgb(239, 239, 239);
+    width: 480px;
+    height: 60px;
+    padding-left: 1px;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    p{
+        // background-color: beige;
+        padding: 6px;   
+    }
+    &:hover{
+        background-color: rgb(211, 211, 211);
+    }
+}
+
+.Options{
+    textarea{
+        margin-left: 10px;
+        resize: none;
+    }
+}
+
+.Save{
+    background-color: #196fe8;
+    border-radius: 2px;
+    margin-left: 10px;
+    width: 62px;
+    height: 20px;
+    padding: 1px;
+    cursor: pointer;
+}
+.Cancel{
+    position: relative;
+    top: -22px;
+    left: 100px;
+    cursor: pointer;
+    // width: 60px;
+    width: 70px;
+    height: 20px;
+    padding: 1px;
+    border-radius: 2px;
+    background-color: rgb(200, 200, 200);
+}

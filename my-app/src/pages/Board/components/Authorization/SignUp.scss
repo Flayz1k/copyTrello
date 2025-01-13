@@ -1,0 +1,54 @@
+.SingUp{
+    // background-color: red;
+    margin-left: 150px;
+    margin-top: 60px;
+}
+
+
+
+.emailSign{
+    position: absolute;
+    left: 677px;
+    top: 255px;
+}
+.passwordSign{
+    position: absolute;
+    left: 677px;
+    top: 318px;
+}
+
+.LinkEntry{
+    text-decoration: none;
+}
+
+
+.WrongPasswordOrEmail{
+    position: relative;
+    top: 53px;
+    font-size: 13px;
+    font-weight:500;
+    left: 94px;
+    color: red;
+}
+
+.ShowPassword{
+    position: relative;
+    top: 23px;
+    left: 233px;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.5;
+    }
+    // background-color: red;
+    width: 23px;
+    border-radius: 10px;
+}
+
+.Authorization-input1{
+    position: relative;
+    display: flex;
+    left: 85px;
+    top: 50px;
+    padding: 5px;
+    margin-top: 30px;
+}

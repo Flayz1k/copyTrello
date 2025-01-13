@@ -1,0 +1,103 @@
+.modalka{
+    display: flex;
+    position: absolute;
+    top: 0px;
+    height: 710px;
+    width: 100%;
+    background-color: blue;
+    padding: 0%;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: gray, $alpha: 0.5);
+    
+}
+
+// *{
+//     outline: 4px solid green !important;
+//     background-color: red;
+// }
+
+.modalka-edd{
+    justify-content: center;
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    opacity: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.closeModalWindow{
+    position: relative;
+    left: 97%;
+    width: 15px;
+    height: 15px;
+    padding: 0px 0px 1.5px 1.5px;
+    // background-color: red;
+    cursor: context-menu;
+    border-radius: 5px;
+}
+.closeModalWindow:hover{
+    border-radius: 5px;
+ 
+    background-color: rgb(190, 188, 188);
+ 
+}
+
+.cardsInput{
+    border-radius: 5px;
+    border:1px solid black;
+}
+.cardsInput:hover{
+    background-color: rgb(219, 219, 219);
+}       
+
+.textArea{
+    position: relative;
+    top: -40px;
+    left: 50px;
+    border: 0px;
+    outline: none;
+    // background-color: red;
+    resize: none;
+    font-weight: 600;
+    font-size: 17px;
+}
+.Table{
+    font-size: 17px;
+    font-weight: bold;   
+}
+.DivTable{
+    position: relative;
+    top: -20px;
+}
+.DivList{
+    position: relative;
+    top: -50px;
+}
+// .background{
+//     border:2px solid rgb(96, 162, 255) ;
+// }
+// .backgroundNone{
+//     border: none;
+// }
+
+.Descripton{
+    background-color: red;
+}
+.DeleteCard{
+    position: relative;
+    width: 120px;
+    background-color: rgb(225, 225, 225);
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    &:hover{
+    background-color: rgb(208, 208, 208);
+
+        
+    }
+}

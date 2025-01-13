@@ -1,0 +1,194 @@
+.Authorization{
+    // background-color: red;
+    // width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 700px;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.Authorization-div1{
+    height: 450px;
+    width: 350px;
+    border:solid 2px black ;
+    border-radius: 13px;
+    // background-color: dodgerblue;
+}
+
+
+.Authorization-div2{
+    width: 150px;
+    height: 30px;
+    background-color: red;
+
+}
+.Authorization-input{
+    position: relative;
+    display: flex;
+    left: 85px;
+    top: 35px;
+    padding: 5px;
+    margin-top: 30px;
+}
+.Authorization-h3{
+    // background-color: red;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.email{
+    position: absolute;
+    left: 677px;
+    top: 250px;
+}
+.password-1{
+    position: absolute;
+    left: 677px;
+    top: 307px;
+}
+.password-2{
+    position: absolute;
+    left: 677px;
+    top: 375px;
+}
+.Registration{
+    position: relative;
+    top: 60px;
+    left: 87px;
+    background-color: rgb(0, 145, 255);
+    width: 164px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(0, 110, 255);
+    }
+}
+
+.Have-Account{
+    position: relative;
+    top: 70px;
+    left: 89px;
+    font-size: 14px;
+}
+
+
+.helpI{
+    position:absolute;
+    left: 860px;
+    top: 356px;
+    // color: red;
+    cursor: default;
+}
+.helpI2{
+    display: none;
+    width: 300px;
+    height: 80px;
+    left: 20px;
+    position: relative;  
+    top: -50px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    border:solid 2px black ;
+    color: black;    
+    background-color:white;
+}
+.helpOi:hover + .helpI2 {
+    display: block;
+}
+
+
+.CheckPassword{
+    position: absolute;
+    top: 374px;
+    left:710px ;
+    z-index: 1;
+
+}
+
+.redBad{
+    position: relative;
+    height: 5px;
+    width: 35px;
+    background-color: rgb(249, 40, 40);
+    display: inline-block;
+    left: -27px;
+    top: -5px;
+    border-radius: 10px;
+
+}
+
+
+
+.orangeNormal{
+    position: relative;
+    height: 5px;
+    width: 35px;
+    background-color: rgb(255, 166, 0);
+    display: inline-block;
+    border-radius: 10px;
+    left: -22px;
+    top: -5px;
+}
+
+.yellowGood{
+    position: relative;
+    height: 5px;
+    width: 35px;
+    background-color:yellow;
+    display: inline-block;
+    border-radius: 10px;
+    top: -5px;
+    left: -14px;
+    
+}
+
+.greenGoodpp{
+    position: relative;
+    height: 5px;
+    width: 35px;
+    background-color: rgb(0, 249, 0);
+    display: inline-block;
+
+    border-radius: 10px;
+    left: -7px;
+    top: -5px;
+}
+
+.grayDefault{
+    position: relative;
+    height: 5px;
+    width: 35px;
+    background-color: rgb(162, 162, 162);
+    display: inline-block;
+    border-radius: 10px;
+    top: -5px;
+}
+
+.passwordVsPassword{
+    position: relative;
+    top: 53px;
+    left: 95px;
+    color: rgb(255, 0, 0);
+   
+}
+
+.ShowPassworda{
+    position: relative;
+    top: 221px;
+    left: 235px;
+    z-index: 1;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.5;
+    }
+    width: 23px;
+    border-radius: 10px;
+}
+
+.strongpass{
+    position: relative;
+    top: 5px;
+    left: 0px;
+}
