@@ -20,6 +20,10 @@ $shadow: 5px 5px 5px rgb(69, 68, 68);
     &:active{
         opacity: 0.7;
     }
+    cursor: grab;
+    &::after{
+        cursor: grabbing;
+    }
 }
 .divCards{
     position: relative;

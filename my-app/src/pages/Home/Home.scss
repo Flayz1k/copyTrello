@@ -26,3 +26,16 @@
 .CreateBoards:hover{
     background-color: rgb(194, 194, 194);
 }
+.Exit{
+    background-color: rgb(0, 132, 255);
+    height: 30px;
+    width: 70px;
+    position: absolute;
+    left: 90%;
+    padding-left: 5px;
+    padding-right: 2px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(0, 162, 255);
+    }
+}

@@ -1,6 +1,6 @@
 .board {
     display: flex;
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     // background-color: DodgerBlue;
     overflow-x: scroll;
 }
@@ -9,14 +9,14 @@
     width: 20px;
   }
 
-::-webkit-scrollbar-thumb{
-    background-color: gray;
-    border-radius: 10px ;
-}
+// ::-webkit-scrollbar-thumb{
+//     background-color: gray;
+//     border-radius: 10px ;
+// }
 
 
 .boardTitle {
-
+    
     text-align: center;
     height: 50px;
     font-size: 25px;
@@ -41,8 +41,18 @@
         font-family: none;
         z-index: 111;
         outline: none;
-
     }
+    textarea{
+        resize: none;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 700;
+        border: none;
+        &:focus{
+            outline: none;
+        }
+    }
+    
 }
 
 .nema {

@@ -26,48 +26,6 @@ function CreateList({ board }: any) {
 
   const [data, setData] = useState<lists[]>();
   const [len, setLen] = useState<number>();
-  // useEffect(() => {
-  //   async function get() {
-  //     const data: board = await api.get("board/" + board_id);
-  //     setData(data.lists);
-  //     if (data?.lists.length == 0) {
-  //       setLen(1);
-  //     } else {
-  //       setLen((data?.lists.length || 0) + 1);
-  //     }
-
-  //   }
-  //   get();
-
-  // async function dalete() {
-  //   const data = api.delete("board/" + board_id, {
-  // title: "3   bob",                   +"/list/" + "1725114333633"
-  // list_id:  1725103475595,
-  // position: 5,
-  // description: "washing process",
-  // custom: {
-  //     deadline: "2022-08-31 12:00"
-  // }
-  // });
-  // }
-  // dalete()
-  // }, []);
-
-  // async function post() {
-  //   if (inp.length !== 0) {
-
-  //     const data = await api.post("board/" + board_id + "/list", {
-  //       title: inp,
-  //       position: len,
-  //     });
-  //   }
-  //   get();
-  // }
-  // async function get() {
-  //   const data: any = await api.get("board/" + board_id);
-  // beb(data.lists);
-  // }
-
   const onKeyDown = (e: any) => {
     if (e.key == "Enter") {
       setModal(false);

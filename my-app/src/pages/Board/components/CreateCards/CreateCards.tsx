@@ -22,20 +22,6 @@ function CreateCards({ lists, newCards }: any) {
   const [inp, setInp] = useState("");
   // const [indexx,setIndexx] = useState<any>()
   async function post() {
-    // // if (inp.length === 0) {
-    // // } else {
-    // //   await api.post("board/" + board_id + "/card", {
-    // //     title: inp,
-    // //     list_id: lists[index].id,
-    // //     position: lists[index].cards.length + 1,
-    // //     description: "washing process",
-    // //     custom: {
-    // //       deadline: "2022-08-31 12:00",
-    // //     },
-    // //   });
-    // // }
-    // get();
-    // setInp("");
     let object = { title: inp, id: lists.id, position: lists.cards.length + 1 };
     newCards(object);
     setInp("");

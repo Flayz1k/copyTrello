@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./listName.scss";
-import { board, listss } from "../../interfaces";
-import api from "../../../../api/request";
-import { useParams } from "react-router-dom";
-import CreateCards from "../CreateCards/CreateCards";
-import { ToastContainer, toast } from "react-toastify";
+import Area from "./dragAndDrop/drag";
 import Cards from "../Cards/Cards";
 interface Titles {
   title: string;
@@ -15,6 +11,8 @@ interface Titles {
   edditListName: any;
   createCards: any;
   // listId:(id:number) => void;
+  areaId: any;
+  listName: any;
 }
 
 function Titles({
@@ -24,8 +22,11 @@ function Titles({
   dropAreaId,
   edditListName,
   createCards,
-  // listId
+  areaId,
+  listName,
 }: Titles) {
+  // console.log(listName)
+  // console.log(title)
   const [est, setEst] = useState(false);
   const [inp, setInp] = useState("");
   const cardsId1 = (cardsId: number) => {
@@ -41,7 +42,6 @@ function Titles({
     }
     setInp(e.target.innerHTML);
   };
-
   const onBlur = () => {
     setEst(false);
     cards.title = inp;
@@ -73,6 +73,7 @@ function Titles({
       />
       <div>
         <Cards
+          title={listName}
           cardsId1={cardsId1}
           cards={cards}
           dropAreaId={dropId}
@@ -84,12 +85,13 @@ function Titles({
     <div>
       <div
         className="List"
+        draggable
         onDragOver={(e) => {
           e.preventDefault();
         }}
-        onDrop={() => {
-          // console.log(cards.id)
-          // listId(cards.id)
+        onDragStart={() => {
+          // console.log(cards)
+          areaId(cards);
         }}
       >
         <div>
@@ -97,6 +99,7 @@ function Titles({
         </div>
         <div>
           <Cards
+            title={listName}
             cardsId1={cardsId1}
             cards={cards}
             dropAreaId={dropId}
